@@ -8,13 +8,14 @@ from django.views.generic import (
     DeleteView,
 )
 
-from .models import WebArchive, Catagory
+from .models import WebArchive, Category
 
 
 class HomepageView(TemplateView):
     template_name = "archive/home.html"
 
 
+# Archive
 class ArchiveListView(ListView):
     model = WebArchive
     template_name = "archive/list.html"
@@ -45,13 +46,30 @@ class ArchiveDeleteView(DeleteView):
     template_name = "archive/delete.html"
 
 
+# Category
 class CategoryListView(ListView):
-    model = Catagory
+    model = Category
     template_name = "archive/list.html"
     context_object_name = "catlist"
 
 
 class CategoryDetailView(DetailView):
-    model = Catagory
+    model = Category
     template_name = "archive/detail.html"
     context_object_name = "cat"
+
+
+class CategoryUpdateView(UpdateView):
+    model = Category
+    fields = "__all__"
+    template_name = "archive/form.html"
+
+
+class CategoryCreateView(CreateView):
+    model = Category
+    template_name = "archive/form.html"
+
+
+class CategoryDeleteView(DeleteView):
+    model = Category
+    template_name = "archive/delete.html"

@@ -5,7 +5,7 @@
     {% if weblist %}
     {% for list in weblist %}
     <li><a href="{{ list.url }}" target="_blank">{{ list.name }}</a> | <a href="{% url 'archive-detail' list.id %}">{{
-            list.tag }}</a></li>
+            list.detail }}</a></li>
     {% endfor %}
     {% endif %}
 

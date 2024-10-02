@@ -6,11 +6,17 @@
     <li>Name : {{ web.name }}</li>
     <li>Url : <a href="{{ web.url }}" target="_blank">{{ web.url }}</a></li>
     <li>Category : {{ web.category }}</li>
+    <a href="{% url 'archive-delete' web.pk %}">Delete</a>
     {% endif %}
 
     {% if cat %}
     <li>ID : {{ cat.id }}</li>
     <li>Name : {{ cat.name }}</li>
+    <a href="{% url 'category-delete' cat.pk %}">Delete</a>
     {% endif %}
 </ul>
+
+<button><a href="{% url 'home' %}">Back to homepage</a></button>
+
+
 {% endblock content %}
