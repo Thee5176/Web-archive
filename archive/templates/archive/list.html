@@ -1,0 +1,9 @@
+{% block content %}
+<h1>Archive List</h1>
+
+<ul>
+    {% for list in weblist %}
+    <li><a href="#">{{ list.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock content %}
