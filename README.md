@@ -11,3 +11,4 @@ Time Limit 4h:
 1h 50m - Create DetailView for archive, category(url, template) #test not working
 2h 30m - Create CreateView, UpdateView, DeleteView(url, template)
 3h 00m - Establish Navigation Flow
+4h      - Finalize and Apply Bootstrap
