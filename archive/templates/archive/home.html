@@ -1,9 +1,11 @@
-{% block content %}
-<h1>Home Page</h1>
+{% extends 'base.html' %}
 
-<ul>
-    <!-- How to test url? -->
-    <li><a href="{% url 'archive-list' %}">Archive List</a></li>
-    <li><a href="{% url 'category-list' %}">Catagory</a></li>
-</ul>
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">Home Page</h1>
+    <ul class="list-group">
+        <li class="list-group-item"><a href="{% url 'archive-list' %}" class="btn btn-link">Archive List</a></li>
+        <li class="list-group-item"><a href="{% url 'category-list' %}" class="btn btn-link">Category</a></li>
+    </ul>
+</div>
 {% endblock content %}

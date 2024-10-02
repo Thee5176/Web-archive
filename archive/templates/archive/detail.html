@@ -1,25 +1,29 @@
+{% extends 'base.html' %}
+
 {% block content %}
-<h1>Detail Template</h1>
+<div class="container mt-5">
+    <h1 class="mb-4">Detail View</h1>
+    <ul class="list-group">
+        {% if web %}
+        <li class="list-group-item">Name: {{ web.name }}</li>
+        <li class="list-group-item">Url: <a href="{{ web.url }}" target="_blank">{{ web.url }}</a></li>
+        <li class="list-group-item">Category: {{ web.category }}</li>
+        <li class="list-group-item">Detail: {{ web.detail }}</li>
+        <div class="mt-3">
+            <a href="{% url 'archive-update' web.pk %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'archive-delete' web.pk %}" class="btn btn-danger">Delete</a>
+            <a href="{% url 'archive-list' %}" class="btn btn-secondary">Back to list</a>
+        </div>
+        {% endif %}
 
-<ul>
-    {% if web %}
-    <li>Name : {{ web.name }}</li>
-    <li>Url : <a href="{{ web.url }}" target="_blank">{{ web.url }}</a></li>
-    <li>Category : {{ web.category }}</li>
-    <li>Detail : {{ web.detail }}</li>
-    <a href="{% url 'archive-update' web.pk %}">Edit</a>
-    <a href="{% url 'archive-delete' web.pk %}">Delete</a>
-    <button><a href="{% url 'archive-list' %}">Back to list</a></button>
-    {% endif %}
-
-    {% if cat %}
-    <li>ID : {{ cat.id }}</li>
-    <li>Name : {{ cat.name }}</li>
-    <a href="{% url 'category-delete' cat.pk %}">Delete</a>
-    <button><a href="{% url 'category-list' %}">Back to list</a></button>
-    {% endif %}
-</ul>
-
-
-
+        {% if cat %}
+        <li class="list-group-item">ID: {{ cat.id }}</li>
+        <li class="list-group-item">Name: {{ cat.name }}</li>
+        <div class="mt-3">
+            <a href="{% url 'category-delete' cat.pk %}" class="btn btn-danger">Delete</a>
+            <a href="{% url 'category-list' %}" class="btn btn-secondary">Back to list</a>
+        </div>
+        {% endif %}
+    </ul>
+</div>
 {% endblock content %}
