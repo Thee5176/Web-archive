@@ -4,15 +4,18 @@
 <ul>
     {% if weblist %}
     {% for list in weblist %}
-    <li><a href="{{ list.url }}" target="_blank">{{ list.name }}</a> | <a href="{% url 'archive-detail' list.id %}">{{
-            list.detail }}</a></li>
+    <li><a href="{{ list.url }}" target="_blank">{{ list.name }}</a> | <a href="{% url 'archive-detail' list.id %}">
+            {{ list.detail }}</a></li>
     {% endfor %}
+    <button><a href="{% url 'archive-create' %}">new archive</a></button>
     {% endif %}
 
     {% if catlist %}
     {% for list in catlist %}
     <li><a href="{% url 'category-detail' list.id %}">{{ list.name }}</li>
     {% endfor %}
+    <button><a href="{% url 'category-create' %}">create category</a></button>
     {% endif %}
 </ul>
+<button><a href="{% url 'home' %}">Back to homepage</a></button>
 {% endblock content %}

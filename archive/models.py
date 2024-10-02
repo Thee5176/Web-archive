@@ -9,7 +9,7 @@ class Category(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("archive-detail", kwargs={"pk": self.pk})
+        return reverse("category-detail", kwargs={"pk": self.pk})
 
 
 class WebArchive(models.Model):

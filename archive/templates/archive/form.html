@@ -1,10 +1,14 @@
 {% block content %}
 <h1>Form View</h1>
 
-<form>
+<form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="confirm" />
+    <input type="submit" value="Confirm" />
+    {% if object %}
+    <button><a href="{% url 'category-detail' object.pk %}">Cancel</a></button>
+    {% else %}
     <button><a href="{% url 'home' %}">Cancel</a></button>
+    {% endif %}
 </form>
 {% endblock content %}

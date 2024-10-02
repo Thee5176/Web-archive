@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views.generic import (
     TemplateView,
     ListView,
@@ -44,6 +44,7 @@ class ArchiveDeleteView(DeleteView):
     model = WebArchive
     fields = "__all__"
     template_name = "archive/delete.html"
+    success_url = reverse_lazy("archive-list")
 
 
 # Category
@@ -67,9 +68,11 @@ class CategoryUpdateView(UpdateView):
 
 class CategoryCreateView(CreateView):
     model = Category
+    fields = "__all__"
     template_name = "archive/form.html"
 
 
 class CategoryDeleteView(DeleteView):
     model = Category
     template_name = "archive/delete.html"
+    success_url = reverse_lazy("category-list")

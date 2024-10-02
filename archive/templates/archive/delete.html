@@ -2,7 +2,7 @@
 <form method="post">{% csrf_token %}
     <p>Are you sure you want to delete object {{ object.name }}</p>
     {{ form }}
-    <input type="submit" value="confirm" />
-    <button><a href="{% url 'archive-detail' object.pk %}">Cancel</a></button>
+    <input type="submit" value="Delete" />
+    <button><a href="{% url 'archive-list' %}">Cancel</a></button>
 </form>
 {% endblock content %}
