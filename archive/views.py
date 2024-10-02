@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
 
-from .models import WebArchive, Catagory
+from .models import WebArchive
 
 
 class HomepageView(TemplateView):

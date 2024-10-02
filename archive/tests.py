@@ -4,7 +4,7 @@ from django.urls import reverse
 
 class TestHomepageView(SimpleTestCase):
     def test_get_webpage(self):
-        response = self.client.get("")
+        response = self.client.get("/")
         self.assertEqual(response.status_code, 200)
 
     def test_get_webpage_by_name(self):

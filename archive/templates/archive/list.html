@@ -3,7 +3,7 @@
 
 <ul>
     {% for list in weblist %}
-    <li><a href="#">{{ list.name }}</a></li>
+    <li><a href="{{ list.url }}">{{ list.name }}</a> | <a href="#">{{ list.tag }}</a></li>
     {% endfor %}
 </ul>
 {% endblock content %}
