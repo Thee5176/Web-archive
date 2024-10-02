@@ -12,3 +12,5 @@ Time Limit 4h:
 2h 30m - Create CreateView, UpdateView, DeleteView(url, template)
 3h 00m - Establish Navigation Flow
 4h      - Finalize and Apply Bootstrap
+
+Status : Waiting for refactor
