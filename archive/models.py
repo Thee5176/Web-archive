@@ -8,4 +8,4 @@ class Catagory(models.Model):
 class WebArchive(models.Model):
     name = models.CharField(max_length=30)
     url = models.URLField()
-    tag = models.ForeignKey(Catagory, on_delete=models.CASCADE)
+    category = models.ForeignKey(Catagory, on_delete=models.CASCADE)

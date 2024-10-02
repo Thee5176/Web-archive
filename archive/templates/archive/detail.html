@@ -1,0 +1,16 @@
+{% block content %}
+<h1>Detail Template</h1>
+
+<ul>
+    {% if web %}
+    <li>Name : {{ web.name }}</li>
+    <li>Url : <a href="{{ web.url }}" target="_blank">{{ web.url }}</a></li>
+    <li>Category : {{ web.category }}</li>
+    {% endif %}
+
+    {% if cat %}
+    <li>ID : {{ cat.id }}</li>
+    <li>Name : {{ cat.name }}</li>
+    {% endif %}
+</ul>
+{% endblock content %}

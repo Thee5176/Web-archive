@@ -1,9 +1,18 @@
 {% block content %}
-<h1>Archive List</h1>
+<h1>List Template</h1>
 
 <ul>
+    {% if weblist %}
     {% for list in weblist %}
-    <li><a href="{{ list.url }}">{{ list.name }}</a> | <a href="#">{{ list.tag }}</a></li>
+    <li><a href="{{ list.url }}" target="_blank">{{ list.name }}</a> | <a href="{% url 'archive-detail' list.id %}">{{
+            list.tag }}</a></li>
     {% endfor %}
+    {% endif %}
+
+    {% if catlist %}
+    {% for list in catlist %}
+    <li><a href="{% url 'category-detail' list.id %}">{{ list.name }}</li>
+    {% endfor %}
+    {% endif %}
 </ul>
 {% endblock content %}
