@@ -1,4 +1,5 @@
 # Django-online-archive-platform
+Function : keep online souce with custom catagory, description
 MVP
 - List website's name with hyperlink
 - Detail : name, url, catagory
