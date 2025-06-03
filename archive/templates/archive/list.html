@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">List View</h1>
+    <ul class="list-group">
+        {% if weblist %}
+        {% for list in weblist %}
+        <li class="list-group-item">
+            <a href="{{ list.url }}" target="_blank">{{ list.name }}</a> | <a
+                href="{% url 'archive-detail' list.id %}">{{ list.detail }}</a>
+        </li>
+        {% endfor %}
+        <div class="mt-3">
+            <a href="{% url 'archive-create' %}" class="btn btn-primary">New Archive</a>
+        </div>
+        {% endif %}
+
+        {% if catlist %}
+        {% for list in catlist %}
+        <li class="list-group-item">
+            <a href="{% url 'category-detail' list.id %}">{{ list.name }}</a>
+        </li>
+        {% endfor %}
+        <div class="mt-3">
+            <a href="{% url 'category-create' %}" class="btn btn-primary">Create Category</a>
+        </div>
+        {% endif %}
+    </ul>
+    <a href="{% url 'home' %}" class="btn btn-secondary mt-4">Back to homepage</a>
+</div>
+{% endblock content %}
